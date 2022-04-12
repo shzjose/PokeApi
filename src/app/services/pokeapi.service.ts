@@ -20,7 +20,20 @@ export class PokeapiService {
                 'Accept': '*/*'
             })
         }
-        return this.http.get<any>(this.pokeUrl + 'pokemon/?limit=151', httpOptions).pipe(
+        return this.http.get<any>(this.pokeUrl + 'pokemon/?limit=3', httpOptions).pipe(
+            map((data: any) => data.results ), retry(1)
+        );
+    }
+
+    GetPokemonCard(): any {
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                'Accept': '*/*'
+            })
+        }
+        return this.http.get<any>(this.pokeUrl + 'pokemon/?limit=3', httpOptions).pipe(
             map((data: any) => data.results ), retry(1)
         );
     }

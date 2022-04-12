@@ -20,6 +20,7 @@ import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.com
 // services
 import { PokeapiService } from './services/pokeapi.service';
 import { CamelCasePipe } from './Shared/Pipes/camel-case.pipe';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CamelCasePipe } from './Shared/Pipes/camel-case.pipe';
     PokelistComponent,
     PokemonDetailsComponent,
     PokemonCardComponent,
-    CamelCasePipe
+    CamelCasePipe,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
