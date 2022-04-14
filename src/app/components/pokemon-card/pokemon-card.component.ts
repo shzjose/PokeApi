@@ -30,4 +30,5 @@ export class PokemonCardComponent implements OnInit {
         this.getName(variable);
     }
 
+
 }

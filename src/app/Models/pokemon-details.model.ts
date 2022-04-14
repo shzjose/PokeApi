@@ -20,7 +20,10 @@ export class PokemonDetails {
     sprites: Sprites = new Sprites;
     species: any = {};
     stats: any[] = [];
-    types: any[] = [];
+    types!: [{
+        slot: number;
+        type: Type
+    }];
 }
 
 class Sprites {
@@ -35,6 +38,11 @@ class Sprites {
 }
 
 class Ability {
+    name: string = '';
+    url: string = '';
+}
+
+class Type{
     name: string = '';
     url: string = '';
 }

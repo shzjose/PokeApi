@@ -14,6 +14,12 @@
             {{abilityArr.ability.name | titlecase}}
         </li>
     </ol>
+    <b>Types</b>
+    <ol>
+      <li *ngFor="let typesArr of pokemonDetails.types">
+        {{typesArr.type.name | titlecase}}
+    </li>
+    </ol>
   </mat-card-content>
   
 </mat-card>

@@ -25,19 +25,6 @@ export class PokeapiService {
         );
     }
 
-    GetPokemonCard(): any {
-        const httpOptions = {
-            headers: new HttpHeaders({
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*',
-                'Accept': '*/*'
-            })
-        }
-        return this.http.get<any>(this.pokeUrl + 'pokemon/?limit=3', httpOptions).pipe(
-            map((data: any) => data.results ), retry(1)
-        );
-    }
-
     GetPokemonByName(name: string): Observable<PokemonDetails> {
         const httpOptions = {
             headers: new HttpHeaders({
@@ -47,6 +34,19 @@ export class PokeapiService {
             })
         }
         return this.http.get<PokemonDetails>(this.pokeUrl + 'pokemon/' + name, httpOptions).pipe(
+            map((data: any) => data ), retry(1)
+        );
+    }
+
+    getPokemonsByType(type: string): any {
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                'Accept': '*/*'
+            })
+        }
+        return this.http.get<any>(this.pokeUrl + 'type/' + type, httpOptions).pipe(
             map((data: any) => data ), retry(1)
         );
     }
