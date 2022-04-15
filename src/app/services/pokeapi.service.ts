@@ -20,7 +20,7 @@ export class PokeapiService {
                 'Accept': '*/*'
             })
         }
-        return this.http.get<any>(this.pokeUrl + 'pokemon/?limit=3', httpOptions).pipe(
+        return this.http.get<any>(this.pokeUrl + 'pokemon/?limit=40', httpOptions).pipe(
             map((data: any) => data.results ), retry(1)
         );
     }

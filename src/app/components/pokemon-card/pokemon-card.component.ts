@@ -21,14 +21,7 @@ export class PokemonCardComponent implements OnInit {
         .subscribe(pokemonResult => this.pokemonDetails = pokemonResult);
     }
 
-    getName(name:any) {
-        return;
-    }
-
-    getnamename(){
-        let variable='';
-        this.getName(variable);
-    }
+    
 
 
 }

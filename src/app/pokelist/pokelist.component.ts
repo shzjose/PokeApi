@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Type } from '@angular/core';
 import { Pokemon } from '../Models/pokemon.model';
 import { PokemonDetails } from '../Models/pokemon-details.model';
 import { PokeapiService } from '../services/pokeapi.service';
@@ -26,6 +26,13 @@ export class PokelistComponent implements OnInit {
     }
 
     filterPokemons(pokemonString: string): void {
-        this.pokemonsList = this.pokemons.filter(pokemon => pokemon.name.toLowerCase().includes(pokemonString.toLowerCase()));
+        this.pokemonsList = this.pokemons.filter(pokemon => pokemon.name.includes(pokemonString.toLowerCase()));
     }
+
+    filterPokemonsByType(pokemonString: string): void {
+        this.pokemonsList = this.pokemons.filter(pokemon => pokemon.types.some(pType => pType.type.name.includes(pokemonString.toLowerCase())));
+    }
+    
 }
+
+
